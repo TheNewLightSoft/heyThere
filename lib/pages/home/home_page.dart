@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:heyThere/utils/theme/colors.dart';
 import 'package:heyThere/utils/theme/text_styles.dart';
+import 'package:heyThere/utils/utils.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +12,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Color _backgroundColor;
   List<Color> _gradienColorsList;
-  Random _random;
   @override
   void initState() {
     _backgroundColor = AppColors.white_FFFFFF;
@@ -26,17 +24,7 @@ class _HomePageState extends State<HomePage> {
       AppColors.purple_4B0082,
       AppColors.pink_9400D3,
     ];
-    _random = Random();
     super.initState();
-  }
-
-  Color changeColor() {
-    Color color;
-    int red = _random.nextInt(256);
-    int green = _random.nextInt(256);
-    int blue = _random.nextInt(256);
-    color = Color.fromRGBO(red, green, blue, 1.0);
-    return color;
   }
 
   @override
